@@ -18,7 +18,7 @@
 usethis::use_package( "thinkr" )
     
 listpaquets <- c('DT', 'readr', 'shiny.i18n', 'shinycssloaders', 'shinyjs',
-    'shinythemes','httr', 'jsonlite', 'zip','toolboxApps')
+    'shinythemes','httr', 'jsonlite', 'zip','toolboxApps',"shinyWidgets",'data.table')
 sapply(listpaquets,usethis::use_package)
 
 
