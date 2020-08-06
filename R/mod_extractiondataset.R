@@ -5,7 +5,7 @@
 #' @param id,input,output,session Internal parameters for {shiny}.
 
 #' @importFrom shiny.i18n Translator
-#' @importFrom shiny NS tagList downloadButton uiOutput includeMarkdown
+#' @importFrom shiny NS tagList downloadButton uiOutput includeMarkdown moduleServer
 #' @importFrom readr write_csv
 #' @importFrom DT dataTableOutput datatable renderDataTable
 #' @importFrom golem get_golem_options
@@ -51,7 +51,10 @@ mod_extractiondatasetUI <- function(id){
 #' extractiondataset Server Function
 #'
 #' @noRd 
-mod_extractiondataset <- function(input, output, session){
+mod_extractiondataset <- function(id){
+moduleServer(
+id,
+function(input, output, session){
   ns <- session$ns
   my_wd <- getwd()
   
@@ -219,13 +222,7 @@ output$tableDatasetMeasurement <- DT::renderDataTable({
     retJeu <- DT::datatable(descriptionMeasurement,rownames= FALSE)
     return(retJeu)
   })
-      
-
-}
-    
-## To be copied in the UI
-# mod_extractiondataset_ui("extractiondataset_ui_1")
-    
-## To be copied in the server
-# callModule(mod_extractiondataset_server, "extractiondataset_ui_1")
+}#End function
+)#End moduleServer
+}#End function module
  

@@ -16,10 +16,14 @@
 ## Dependencies ----
 ## Add one line by package you want to add as dependency
 usethis::use_package( "thinkr" )
-    
-listpaquets <- c('DT', 'readr', 'shiny.i18n', 'shinycssloaders', 'shinyjs',
+usethis::use_package( "waiter" )
+listpaquets <- c('waiter','DT', 'readr', 'shiny.i18n', 'shinycssloaders', 'shinyjs',
     'shinythemes','httr', 'jsonlite', 'zip','toolboxApps',"shinyWidgets",'data.table')
 sapply(listpaquets,usethis::use_package)
+
+## Don't uses build these files
+usethis::use_build_ignore(c("dbconfLocal.yaml","dbconfProd.yaml"))
+usethis::use_build_ignore("Readme.R")
 
 
 ## Add modules ----
