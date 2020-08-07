@@ -6,8 +6,8 @@ Authors@R:
            family = "Paroissien",
            role = c("aut", "cre"),
            email = "jean-baptiste.paroissien@cnrs-orleans.fr")
-Description: What the package does (one paragraph).
-License: GPL-3
+Description: Shiny app to extract dataset from SNO-Tourbières with Zenodo or Theia/Ozcar format.
+License: GPL-3 + file LICENSE
 Imports: 
     config,
     golem,

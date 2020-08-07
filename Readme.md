@@ -5,12 +5,13 @@
 <!-- badges: end -->
 
 Shiny app to extract dataset archive from SNO-Tourbières database with two formats : 
+
 	- Theia/OZCAR : zip file of data by variable and metadata (ISO19115/INSPIRE, O&M and DataCite)
-	- Zenodo : zip file by dataset and metadata (ISO19115/INSPIRE, O&M and DataCite)
+	- Zenodo : zip file by dataset and metadata (ISO19115/INSPIRE, O&M and DataCite). Use to create DOI in [ZENODO](https://www.zenodo.org/communities/sno_tourbieres_data)
 
 ## Installation
 
-You can install the released version of dataAccessApp with:
+You can install the released version of datasetArchiveApp with:
 
 ``` r
 devtools::install_github("Rosalien/datasetArchiveApp")
@@ -48,9 +49,9 @@ datasetArchiveApp::run_app(language,pool)
 ### Docker
 
 ```bash
-docker build -t dataaccessapp
+docker build -t datasetarchiveapp
 ```
 
 ```bash
-docker run --net=host dataaccessapp
+docker run --net=host datasetarchiveapp
 ```
