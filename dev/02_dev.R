@@ -18,7 +18,10 @@
 usethis::use_package( "thinkr" )
 usethis::use_package( "waiter" )
 listpaquets <- c('waiter','DT', 'readr', 'shiny.i18n', 'shinycssloaders', 'shinyjs',
-    'shinythemes','httr', 'jsonlite', 'zip','toolboxApps',"shinyWidgets",'data.table')
+    'shinythemes','httr', 'jsonlite', 'zip',"shinyWidgets",'data.table')
+
+usethis::use_dev_package('toolboxApps')
+
 sapply(listpaquets,usethis::use_package)
 
 ## Don't uses build these files

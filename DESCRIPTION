@@ -21,7 +21,7 @@ Imports:
     httr,
     jsonlite,
     zip,
-    toolboxApps,
+    toolboxApps (>= 1.0),
     pkgload,
     shinyWidgets,
     data.table,
@@ -29,3 +29,5 @@ Imports:
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
+Remotes:  
+    Rosalien/toolboxApps
