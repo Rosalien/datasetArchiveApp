@@ -17,15 +17,24 @@ You can install the released version of datasetArchiveApp with:
 devtools::install_github("Rosalien/datasetArchiveApp")
 ```
 
-## Deploy
+## Database configuration
 
-### Depencies
+dataAccessApp works with a postgresql database build with [data-snot.cnrs.fr](https://data-snot.cnrs.fr/). To test dataAccessApp, you can used a [dump of database test](https://github.com/Rosalien/dataAccessApp/tree/master/inst/extdata) with these parameters :
+
+- dbname: "sno"
+- host: "localhost"
+- port: "5432"
+- user : "snouser"
+- password: "sno001"
+
+## Deploy
 
 ### Deploy in local
 
 ``` r
-library(toolboxApp)
-datasetArchiveApp::run_app(language="en",pool="dbconfProd.yaml")
+language <- "en" #'en' or 'fr'
+pool <- "dbconfProd.yaml" #yaml of database configuration 
+dataAccessApp::run_app(language,pool)
 ```
 
 ### Shiny-server
