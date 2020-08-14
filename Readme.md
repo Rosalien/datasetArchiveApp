@@ -57,9 +57,22 @@ datasetArchiveApp::run_app(language,pool)
 
 ### Docker
 
+Build and run database test :
+
 ```bash
-docker build -t datasetarchiveapp
+cd inst/extdata/
+docker build -t snodb .
+docker run -d --name snodbrun -p 5433:5432 snodb:latest
+docker exec -i snodbrun pg_restore --clean --dbname sno -h localhost -p 5432 -U snouser < snotest.dump
 ```
+
+Build dataAccessApp :
+
+```bash
+docker build -t datasetarchiveapp .
+```
+
+Deploy dataAccessApp :
 
 ```bash
 docker run --net=host datasetarchiveapp
